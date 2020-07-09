@@ -82,7 +82,7 @@
 // Частковий приклад реультату:
 // let usersWithCities = [{id: 1, name: 'vasya', age: 31, status: false, address: {user_id: 1, country: 'Ukraine', city: 'Ternopil'}}....]
 
-// let usersWithId =[
+// let usersWithId = [
 //     { id: 1, name: 'vasya', age: 31, status: false },
 //     { id: 2, name: 'petya', age: 30, status: true },
 //     { id: 3, name: 'kolya', age: 29, status: true },
@@ -96,20 +96,14 @@
 //     { user_id: 4, country: 'USA', city: 'Miami' }
 // ];
 
-// let usersWithIdJSON = JSON.stringify(usersWithId);
-// let usersWithCities = JSON.parse(usersWithIdJSON);
-
 // for (let i = 0; i < usersWithId.length; i++) {
 //     for (let j = 0; j < citiesWithId.length; j++) {
 //         if (usersWithId[i].id === citiesWithId[j].user_id) {
-//             usersWithCities[i].address = citiesWithId[j].country + ', ' + citiesWithId[j].city;
+//             usersWithId[i]["address"] = citiesWithId[j];
 //         }
 //     }
 // }
 // console.log(usersWithId);
-// console.log(citiesWithId);
-// console.log(usersWithCities);
-
 
 
 // - є сторінка rules.html. Контентом сторінки є заголовки та параграфи. Заголовки (h2) характеризують тему контенту яка вказана в параграфі.
