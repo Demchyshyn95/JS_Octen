@@ -98,12 +98,3 @@
 // allObj({name:'Andre'},{age:21},{animals:"cat"},{maried:false},{single:false},{},{})
 
 // - Створити функцію яка приймає масив будь яких объектів, та повертає загальн кількість полів в них
-function allObj() {
-    Array = []
-    for (i = 0; i < arguments.length; i++) {
-        Array[i] = arguments[i];
-    }
-let rezult = Array.length;
-console.log(rezult);
-}
-allObj({name:'Andre'},{age:21},{animals:"cat"},{maried:false},{single:false},{},{})
