@@ -163,31 +163,31 @@
 
 // Додаткове 3.
 
-let trafficLights = prompt('Enter color traffic lights');
-let isRoadClear = confirm('isRoadClear?');
+// let trafficLights = prompt('Enter color traffic lights');
+// let isRoadClear = confirm('isRoadClear?');
 
-if (trafficLights === 'green' && isRoadClear === true) {
-    alert('ІДИ!!!!')
-}
-else if (trafficLights === 'green' && isRoadClear === false) {
-    alert('подожди пока нарушители проедут')
-}
-else if (trafficLights === 'yellow' && isRoadClear === false) {
-    alert('Жди!!!!')
-}
-else if (trafficLights === 'yellow' && isRoadClear === true) {
-    alert('все рано жди!!!!')
-}
-else if (trafficLights === 'red' && isRoadClear === true) {
-    alert('стой и жди!!!!')
-}
-else if (trafficLights === 'red' && isRoadClear === false) {
-    alert('стой все рано!!!!')
+// if (trafficLights === 'green' && isRoadClear === true) {
+//     alert('ІДИ!!!!')
+// }
+// else if (trafficLights === 'green' && isRoadClear === false) {
+//     alert('подожди пока нарушители проедут')
+// }
+// else if (trafficLights === 'yellow' && isRoadClear === false) {
+//     alert('Жди!!!!')
+// }
+// else if (trafficLights === 'yellow' && isRoadClear === true) {
+//     alert('все рано жди!!!!')
+// }
+// else if (trafficLights === 'red' && isRoadClear === true) {
+//     alert('стой и жди!!!!')
+// }
+// else if (trafficLights === 'red' && isRoadClear === false) {
+//     alert('стой все рано!!!!')
 
-}
-else {
-    alert('делай что хочешь')
-}
+// }
+// else {
+//     alert('делай что хочешь')
+// }
 
 
 
