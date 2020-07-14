@@ -250,7 +250,7 @@
 //   }
 // }
 
-// carsFun(['skoda','audi','bmw','porsh','VW'],car1)
-// carsFun(['skoda','audi','bmw','porsh','VW'],car2)
+// carsFun(['skoda','audi','bmw','porsh','VW'],'car1')
+// carsFun(['skoda','audi','bmw','porsh','VW'],'car2')
 
 
