@@ -1,7 +1,6 @@
-#btn {
+button {
     color: red;
-    width: 100px;
-    height: 50px;
+    height: 25px;
 }
 
 .menu ul {
@@ -28,4 +27,10 @@
 
 .menu.open ul {
     display: block;
+}
+table tr td{
+    border: 1px solid silver;
+}
+#content{
+    border: 1px solid silver; 
 }
