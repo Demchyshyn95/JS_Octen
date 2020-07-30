@@ -474,25 +474,25 @@
 // }
 // let cinderellas = [];
 // let mary = new Cinderella('Mary', 21, 33);
-// cinderellas.push([mary])
-// let anna = new Cinderella('Anna', 17, 35);
-// cinderellas.push([anna])
+// cinderellas.push(mary)
+// let anna = new Cinderella('Anna', 17, 35)
+// cinderellas.push(anna)
 // let jes = new Cinderella('Jes', 23, 38);
-// cinderellas.push([jes])
+// cinderellas.push(jes)
 // let oks = new Cinderella('Oksana', 20, 37);
-// cinderellas.push([oks])
+// cinderellas.push(oks)
 // let jesi = new Cinderella('Jesica', 19, 37);
-// cinderellas.push([jesi])
+// cinderellas.push(jesi)
 // let katy = new Cinderella('Katy', 21, 36);
-// cinderellas.push([katy])
+// cinderellas.push(katy)
 // let marta = new Cinderella('Marta', 23, 39);
-// cinderellas.push([marta])
+// cinderellas.push(marta)
 // let alla = new Cinderella('Alla', 20, 39);
-// cinderellas.push([alla])
+// cinderellas.push(alla)
 // let vika = new Cinderella('Vika', 23, 37);
-// cinderellas.push([vika])
+// cinderellas.push(vika)
 // let tani = new Cinderella('Tani', 21, 39);
-// cinderellas.push([tani])
+// cinderellas.push(tani)
 
 // class Princ {
 //     constructor(name, age, shoeSize,) {
@@ -502,8 +502,8 @@
 //     }
 //     cinderellaSearch(cinderellas) {
 //         for (const ciderel of cinderellas) {
-//             if (this.shoeSize === ciderel[0].footSize) {
-//                 console.log('Твоя попелюшка ' + ciderel[0].name)
+//             if (this.shoeSize === ciderel.footSize) {
+//                 console.log('Твоя попелюшка ' + ciderel.name)
 //             }
 //         }
 //     }
