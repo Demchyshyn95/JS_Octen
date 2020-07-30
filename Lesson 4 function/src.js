@@ -1,94 +1,93 @@
 // - створити функцію яка виводить масив
-// function getArray() {
-//  console.log(arguments[0]);
-// }
-// getArray([1, 2, 3]);
-
 // - створити функцію яка заповнює масив рандомними числами та виводить його. Для виведення використати попвередню функцію.
-// function getArray() {
+// function getArray(arr) {
+//     for (const el of arr) {
+//         console.log(el)
+//     }
+// }
+// getArray(setArray());
+
+// function setArray() {
 //     let array = [];
-//     for (i = 0; i < 10; i++) {
+//     for (i = 0; i < 3; i++) {
 //         let random = Math.floor(Math.random() * (100 - 1)) + 1;
 //         array[i] = random;
 //     }
-//     console.log(array)
+//     return array;
 // }
-// getArray();
 
 // - створити функцію яка приймає три числа та виводить та повертає найменьше.
-// function minNumber(array) {
-//   let min = array[0];
-// for (let i = 0; i < array.length; i++) {
-//   if(min > array[i]){
-//     min = array[i];
-//   }
+// function minNumber(a, b, c) {
+//     if (a < b && a < c) {
+//         console.log(a)
+//     }
+//     else if (b < a && b < c) {
+//         console.log(b)
+//     }
+//     else if (c < a && c < c) {
+//         console.log(c)
+//     }
 // }
-//   console.log(min);
-// }
-// minNumber([22,2,2332,-322,223,23])
+// minNumber(7, 4, 6)
 
 
 // - створити функцію яка приймає три числа та виводить та повертає найбільше.
-// function maxNumber(array) {
-//   let max = array[0];
-// for (let i = 0; i < array.length; i++) {
-//   if(max < array[i]){
-//     max = array[i];
-//   }
+// function minNumber(a, b, c) {
+//     if (a > b && a > c) {
+//         console.log(a)
+//     }
+//     else if (b > a && b > c) {
+//         console.log(b)
+//     }
+//     else if (c > a && c > b) {
+//         console.log(c)
+//     }
 // }
-//   console.log(max);
-// }
-// maxNumber([22,2,45332,-322,223,23])
+// minNumber(7, 4, 6)
 
 // - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше
-// function Allnumb(array) {
-//   let max = array[0];
-//   let min = array[0];
-// for (let i = 0; i < array.length; i++) {
-//   if(max < array[i]){
-//     max = array[i];
-//   }
-//   else if (min > array[i]){
-//     min = array[i]
-//   }
+// function Allnumb() {
+//     let max = arguments[0];
+//     let min = arguments[0];
+//     for (let i = 0; i < arguments.length; i++) {
+
+//         if (max < arguments[i]) {
+//             max = arguments[i];
+//         }
+//         else if (min > arguments[i]) {
+//             min = arguments[i]
+//         }
+//     }
+//     console.log(max);
+//     return min;
 // }
-//   console.log(max);
-//   return min;
-// }
-// console.log(Allnumb([22,3.12,45332,-322,223,23]))
+// console.log(Allnumb(22, 3.12, 45332, -322, 223, 23))
 
 // - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
-// function allN() {
-//     numb = []
-//     for (i = 0; i < arguments.length; i++) {
-//         numb[i]=arguments[i]
-//     }
-// let sum = numb.reduce((a,b)=>a+b,0);
-// let rezult = sum/numb.length;
-// console.log(rezult);
+// function allN(array) {
+//     let sum = array.reduce((a, b) => a + b, 0);
+//     let rezult = sum / array.length;
+//     console.log(rezult);
 // }
-// allN(1, 20, 3, 4, 5, 6, 7, 8, 9)
-
+// allN([1, 2, 3])
 
 // - Створити функцію яка приймає масив будь яких объектів, та повертає значення кількості об'єктів в масиві
 
 // function allObj() {
-// let rezult = arguments.length;
+// let rezult = arguments[0].length;
 // console.log(rezult);
 // }
 
-// allObj({name:'Andre'},{age:21},{animals:"cat"},{maried:false},{single:false},{},{})
+// allObj([{name:'Andre'},{age:21},{animals:"cat"},{maried:false},{single:false}])
 
 // - створити функцію  яка скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
-//   Приклад
-//   [1,2,3,4]
-//   [2,3,4,5]
-//   результат
-//   [3,5,7,9]
+//     Приклад
+// [1, 2, 3, 4]
+// [2, 3, 4, 5]
+// результат
+// [3, 5, 7, 9]
 
-// function sumArray() {
-//     let arr1 = [1, 2, 3, 4];
-//     let arr2 = [2, 3, 4, 5];
+// function sumArray(arr1,arr2) {
 //     let arr3 = [];
 //     for (let i = 0; i < arr1.length; i++) {
 //         arr3[i] = arr1[i] + arr2[i];
@@ -96,7 +95,7 @@
 //     console.log(arr3);;
 //     return arr3;
 // }
-// sumArray();
+// sumArray([1, 2, 3, 4], [2, 3, 4, 5]);
 
 
 // - *** створити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
@@ -107,20 +106,16 @@
 // [0,0,1,0]   => [1,0,0,0]
 
 // let arrayOfEndZiro = (arr1) => {
-//   let newAraay = [];
-//   for (let i = 0; i < arr1.length; i++) {
-//     if (arr1[i] > 0) {
-//       newAraay.push(arr1[i]);
+//     for (let i = 0; i < arr1.length; i++) {
+//         if (arr1[i] === 0) {
+//             arr1.push(...arr1.splice(i, 1))
+//         }
 //     }
-//   }
-//   for (const num of arr1) {
-//     if (num === 0) {
-//       newAraay.push(num)
-//     }
-//   }
-//   console.log(newAraay);
+//     return arr1;
 // }
-// arrayOfEndZiro([1, 0, 6, 0, 3]) ///////// ?????????? ЯК ЙОГО МОЖНА ЗРОБИТИ ПО НОРМАЛЬНОМУ????????????
+// console.log(arrayOfEndZiro([1, 0, 6, 0, 3]));
+
+ ///////// ?????????? ЯК ЙОГО МОЖНА ЗРОБИТИ ПО НОРМАЛЬНОМУ????????????
 
 
 // Створити функцію яка :
