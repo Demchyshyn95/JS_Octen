@@ -1,77 +1,77 @@
--- 1. +Вибрати усіх клієнтів, чиє ім'я має менше ніж 6 символів.
+-- 1. +Р’РёР±СЂР°С‚Рё СѓСЃС–С… РєР»С–С”РЅС‚С–РІ, С‡РёС” С–Рј'СЏ РјР°С” РјРµРЅС€Рµ РЅС–Р¶ 6 СЃРёРјРІРѕР»С–РІ.
 select * from client where length(FirstName)<6;
 
--- 2. +Вибрати львівські відділення банку.+
+-- 2. +Р’РёР±СЂР°С‚Рё Р»СЊРІС–РІСЃСЊРєС– РІС–РґРґС–Р»РµРЅРЅСЏ Р±Р°РЅРєСѓ.+
 select * from department where DepartmentCity='Lviv';
 
--- 3. +Вибрати клієнтів з вищою освітою та посортувати по прізвищу.
+-- 3. +Р’РёР±СЂР°С‚Рё РєР»С–С”РЅС‚С–РІ Р· РІРёС‰РѕСЋ РѕСЃРІС–С‚РѕСЋ С‚Р° РїРѕСЃРѕСЂС‚СѓРІР°С‚Рё РїРѕ РїСЂС–Р·РІРёС‰Сѓ.
 select * from client where Education='high' order by LastName;
 
--- 5. +Вивести усіх клієнтів, чиє прізвище закінчується на iv чи yn.
+-- 5. +Р’РёРІРµСЃС‚Рё СѓСЃС–С… РєР»С–С”РЅС‚С–РІ, С‡РёС” РїСЂС–Р·РІРёС‰Рµ Р·Р°РєС–РЅС‡СѓС”С‚СЊСЃСЏ РЅР° iv С‡Рё yn.
 select * from client where LastName like '%iv' or LastName like'%yn';
 
--- 6. +Вивести клієнтів банку, які обслуговуються київськими відділеннями.
+-- 6. +Р’РёРІРµСЃС‚Рё РєР»С–С”РЅС‚С–РІ Р±Р°РЅРєСѓ, СЏРєС– РѕР±СЃР»СѓРіРѕРІСѓСЋС‚СЊСЃСЏ РєРёС—РІСЃСЊРєРёРјРё РІС–РґРґС–Р»РµРЅРЅСЏРјРё.
 select * from client where City ='Kyiv';
 
--- 7. +Вивести імена клієнтів та їхні номера, погрупувавши їх за іменами.
+-- 7. +Р’РёРІРµСЃС‚Рё С–РјРµРЅР° РєР»С–С”РЅС‚С–РІ С‚Р° С—С…РЅС– РЅРѕРјРµСЂР°, РїРѕРіСЂСѓРїСѓРІР°РІС€Рё С—С… Р·Р° С–РјРµРЅР°РјРё.
 select Passport,FirstName from client group by FirstName;
 
--- 8. +Вивести дані про клієнтів, які мають кредит більше ніж на 5000 тисяч гривень.
+-- 8. +Р’РёРІРµСЃС‚Рё РґР°РЅС– РїСЂРѕ РєР»С–С”РЅС‚С–РІ, СЏРєС– РјР°СЋС‚СЊ РєСЂРµРґРёС‚ Р±С–Р»СЊС€Рµ РЅС–Р¶ РЅР° 5000 С‚РёСЃСЏС‡ РіСЂРёРІРµРЅСЊ.
 select * from client c
 right join application a on a.idApplication = c.idClient
 where a.sum > 5000 and a.CreditState = 'Not returned';
 
--- 9. +Порахувати кількість клієнтів усіх відділень та лише львівських відділень.
+-- 9. +РџРѕСЂР°С…СѓРІР°С‚Рё РєС–Р»СЊРєС–СЃС‚СЊ РєР»С–С”РЅС‚С–РІ СѓСЃС–С… РІС–РґРґС–Р»РµРЅСЊ С‚Р° Р»РёС€Рµ Р»СЊРІС–РІСЃСЊРєРёС… РІС–РґРґС–Р»РµРЅСЊ.
 select count(idClient)City from client s  where s.City = 'Lviv';
 select count(FirstName)from client s  where s.City != 'Lviv';
 
--- 10. Знайти кредити, які мають найбільшу суму для кожного клієнта окремо.
+-- 10. Р—РЅР°Р№С‚Рё РєСЂРµРґРёС‚Рё, СЏРєС– РјР°СЋС‚СЊ РЅР°Р№Р±С–Р»СЊС€Сѓ СЃСѓРјСѓ РґР»СЏ РєРѕР¶РЅРѕРіРѕ РєР»С–С”РЅС‚Р° РѕРєСЂРµРјРѕ.
 select max(Sum),idClient from application a
 join client c on c.idClient = a.Client_idClient
 group by Client_idClient;
 
 
--- 12. Визначити найбільший та найменший кредити.
+-- 12. Р’РёР·РЅР°С‡РёС‚Рё РЅР°Р№Р±С–Р»СЊС€РёР№ С‚Р° РЅР°Р№РјРµРЅС€РёР№ РєСЂРµРґРёС‚Рё.
 select max(sum),min(sum) from application;
--- 13. Порахувати кількість кредитів для клієнтів,які мають вищу освіту.
+-- 13. РџРѕСЂР°С…СѓРІР°С‚Рё РєС–Р»СЊРєС–СЃС‚СЊ РєСЂРµРґРёС‚С–РІ РґР»СЏ РєР»С–С”РЅС‚С–РІ,СЏРєС– РјР°СЋС‚СЊ РІРёС‰Сѓ РѕСЃРІС–С‚Сѓ.
 select count(Sum),FirstName from application
 join client c on c.idClient = application.Client_idClient
 where c.Education='high'
 group by FirstName;
 
 
--- 14. Вивести дані про клієнта, в якого середня сума кредитів найвища.
+-- 14. Р’РёРІРµСЃС‚Рё РґР°РЅС– РїСЂРѕ РєР»С–С”РЅС‚Р°, РІ СЏРєРѕРіРѕ СЃРµСЂРµРґРЅСЏ СЃСѓРјР° РєСЂРµРґРёС‚С–РІ РЅР°Р№РІРёС‰Р°.
 select max(Sum) from application
 join client c on c.idClient = application.Client_idClient
 where Sum in (select avg(Sum) from application
 join client c on c.idClient = application.Client_idClient
 group by FirstName);
 
--- 15. Вивести відділення, яке видало в кредити найбільше грошей
+-- 15. Р’РёРІРµСЃС‚Рё РІС–РґРґС–Р»РµРЅРЅСЏ, СЏРєРµ РІРёРґР°Р»Рѕ РІ РєСЂРµРґРёС‚Рё РЅР°Р№Р±С–Р»СЊС€Рµ РіСЂРѕС€РµР№
 select Sum(Sum),DepartmentCity from bank.client
 join application a on client.idClient = a.Client_idClient
 join department d on d.idDepartment = client.Department_idDepartment
 where Department_idDepartment=idDepartment
 group by DepartmentCity
 limit 1;
--- 16. Вивести відділення, яке видало найбільший кредит.
+-- 16. Р’РёРІРµСЃС‚Рё РІС–РґРґС–Р»РµРЅРЅСЏ, СЏРєРµ РІРёРґР°Р»Рѕ РЅР°Р№Р±С–Р»СЊС€РёР№ РєСЂРµРґРёС‚.
 select max(Sum),DepartmentCity from application
 join client c on c.idClient = application.Client_idClient
 join department d on c.Department_idDepartment = d.idDepartment;
 
--- 17. Усім клієнтам, які мають вищу освіту, встановити усі їхні кредити у розмірі 6000 грн.
+-- 17. РЈСЃС–Рј РєР»С–С”РЅС‚Р°Рј, СЏРєС– РјР°СЋС‚СЊ РІРёС‰Сѓ РѕСЃРІС–С‚Сѓ, РІСЃС‚Р°РЅРѕРІРёС‚Рё СѓСЃС– С—С…РЅС– РєСЂРµРґРёС‚Рё Сѓ СЂРѕР·РјС–СЂС– 6000 РіСЂРЅ.
 update client c
 join application a on c.idClient = a.Client_idClient
 set a.Sum=6000 where c.Education = 'high';
-# 18. Усіх клієнтів київських відділень пересилити до Києва.
+# 18. РЈСЃС–С… РєР»С–С”РЅС‚С–РІ РєРёС—РІСЃСЊРєРёС… РІС–РґРґС–Р»РµРЅСЊ РїРµСЂРµСЃРёР»РёС‚Рё РґРѕ РљРёС”РІР°.
 update client c
 join department d on c.Department_idDepartment = d.idDepartment
 set Department_idDepartment = 1 where City = 'Kyiv';
 
--- 19. Видалити усі кредити, які є повернені.
+-- 19. Р’РёРґР°Р»РёС‚Рё СѓСЃС– РєСЂРµРґРёС‚Рё, СЏРєС– С” РїРѕРІРµСЂРЅРµРЅС–.
 delete from application where CreditState = 'Returned';
 
-# - 20. Видалити кредити клієнтів, в яких друга літера прізвища є голосною.
+# - 20. Р’РёРґР°Р»РёС‚Рё РєСЂРµРґРёС‚Рё РєР»С–С”РЅС‚С–РІ, РІ СЏРєРёС… РґСЂСѓРіР° Р»С–С‚РµСЂР° РїСЂС–Р·РІРёС‰Р° С” РіРѕР»РѕСЃРЅРѕСЋ.
 delete from application
 where Client_idClient in (select idClient from client where LastName like '_o%' or LastName like '_e%');
 
