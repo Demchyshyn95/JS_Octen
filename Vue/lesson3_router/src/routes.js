@@ -1,15 +1,16 @@
-import First from "./components/First";
-import Second from "./components/Second";
-import App from "./App";
+import Home from "@/components/Home";
+import Contacts from "@/components/Contacts";
+import MyProjects from "@/components/MyProjects";
+
 
 export const routes = [
     {
-      path: '',component:App, name: "home"
+        path: '', component: Home, name:'home'
     },
     {
-     path:'/first',component:First, name:"first"
+        path: '/Contacts', component: Contacts, name: 'contacts'
     },
     {
-        path:'/second',component: Second, name: "second"
+        path: '/MyProjects', component: MyProjects, name: 'myProjects'
     }
-]
+    ]
