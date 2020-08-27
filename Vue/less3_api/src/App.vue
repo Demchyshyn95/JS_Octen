@@ -29,7 +29,7 @@
 </template>
 
 <script>
-
+import axios from 'axios';
 export default {
   name: 'App',
   data() {
@@ -46,9 +46,9 @@ export default {
     }
   },
   beforeMount() {
-    this.$http.get("User.json", this.user)
+    axios.get(`https://htpp-less3-api.firebaseio.com/User.json`, this.user)
         .then(res => {
-          return res.json()
+          return res.data
         })
         .then(res => {
           for (let el in res) {
@@ -57,12 +57,14 @@ export default {
         })
   },
 
+
   methods: {
     submit() {
-      this.$http.post("User.json", this.user)
+      axios.post("https://htpp-less3-api.firebaseio.com/User.json", this.user)
       this.firstName = '';
       this.lastName = '';
       this.number = '';
+
     },
     deleteEl() {
       const input = document.getElementsByTagName('input');
@@ -72,12 +74,12 @@ export default {
         if (el.checked) {
           const el = this.newUser.find((el) => el.firstName === this.text && el.lastName === this.text2 );
           const id = el.id;
-         this.$http.delete(`User/${id}.json`)
+         axios.delete(`https://htpp-less3-api.firebaseio.com/User/${id}.json`)
         }
       })
     },
     delAll(){
-      this.$http.delete(`.json`)
+      axios.delete(`https://htpp-less3-api.firebaseio.com/.json`)
     }
   }
 }
