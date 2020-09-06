@@ -9,27 +9,28 @@
     </div>
     <div style="margin-top: 10px">
       <table style="width: 605px">
-      <tr>
-        <th><u>FirstName:</u></th>
-        <th><u>LastName:</u></th>
-        <th><u>Number:</u></th>
-      </tr>
-      <tr v-for="(el,i) in newUser " :key="i">
-        <th>{{ el.firstName }}</th>
-        <th>{{ el.lastName }}</th>
-        <th>{{ el.number }}</th>
-        <input type="checkbox"/>
-      </tr>
-    </table>
+        <tr>
+          <th><u>FirstName:</u></th>
+          <th><u>LastName:</u></th>
+          <th><u>Number:</u></th>
+        </tr>
+        <tr v-for="(el,i) in newUser " :key="i">
+          <th>{{ el.firstName }}</th>
+          <th>{{ el.lastName }}</th>
+          <th>{{ el.number }}</th>
+          <input type="checkbox"/>
+        </tr>
+      </table>
     </div>
 
-    <button @click="delAll" >dellAll</button>
+    <button @click="delAll">dellAll</button>
 
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+
 export default {
   name: 'App',
   data() {
@@ -43,42 +44,73 @@ export default {
       id: '',
       text: '',
       text2: '',
+
     }
   },
   beforeMount() {
-    axios.get(`https://htpp-less3-api.firebaseio.com/User.json`, this.user)
-        .then(res => {
-          return res.data
-        })
-        .then(res => {
-          for (let el in res) {
-            this.newUser.push({id: el, ...res[el]})
-          }
-        })
+    this.getEL()
   },
 
 
   methods: {
-    submit() {
-      axios.post("https://htpp-less3-api.firebaseio.com/User.json", this.user)
-      this.firstName = '';
-      this.lastName = '';
-      this.number = '';
+    async getEL() {
+      try {
+        await axios.get(`https://htpp-less3-api.firebaseio.com/User.json`)
+            .then(res => {
+              return res.data
+            })
+            .then(res => {
+              for (let el in res) {
+                this.newUser.push({id: el, ...res[el]})
+              }
+            })
+      } catch (e) {
+        console.log(e)
+      }
+    },
+
+    async submit() {
+      try {
+        await axios.post("https://htpp-less3-api.firebaseio.com/User.json", this.user)
+      } catch (e) {
+        console.log(e)
+      } finally {
+        this.user.firstName = '';
+        this.user.lastName = '';
+        this.user.number = '';
+        this.newUser = [],
+           setTimeout(()=>
+             this.getEL(),500
+           )
+      }
+    },
+
+    async deleteEl() {
+      const input = document.getElementsByTagName('input');
+      try {
+        input.forEach((el) => {
+          this.text = el.parentNode.childNodes[0].innerText;
+          this.text2 = el.parentNode.childNodes[1].innerText;
+          if (el.checked) {
+            const el = this.newUser.find((el) => el.firstName === this.text && el.lastName === this.text2);
+            const id = el.id;
+            axios.delete(`https://htpp-less3-api.firebaseio.com/User/${id}.json`)
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      } finally {
+        input.forEach((el) => {
+          if (el.checked) {
+            el.checked = false
+          }
+        })
+        this.newUser = [],
+            setTimeout(() => this.getEL(), 1000)
+      }
 
     },
-    deleteEl() {
-      const input = document.getElementsByTagName('input');
-      input.forEach((el) => {
-        this.text = el.parentNode.childNodes[0].innerText;
-        this.text2 = el.parentNode.childNodes[1].innerText;
-        if (el.checked) {
-          const el = this.newUser.find((el) => el.firstName === this.text && el.lastName === this.text2 );
-          const id = el.id;
-         axios.delete(`https://htpp-less3-api.firebaseio.com/User/${id}.json`)
-        }
-      })
-    },
-    delAll(){
+    delAll() {
       axios.delete(`https://htpp-less3-api.firebaseio.com/.json`)
     }
   }

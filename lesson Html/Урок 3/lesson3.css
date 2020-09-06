@@ -1,0 +1,83 @@
+.leftimg {
+    float: left;
+    margin: 7px 7px 7px 0;
+}
+
+.rightimg {
+    float: right;
+    margin: 7px 0 7px 7px;
+}
+
+.photo {
+    width: 400px;
+    height: 350px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
+}
+
+body {
+    background-image: url(https://blog.comfy.ua/wp-content/uploads/2019/04/Drogon.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 22px;
+    font-weight: bold;
+    color:#fff(224, 224, 220);
+    background: rgb(87, 87, 87);
+    width: fit-content;
+}
+ul {
+    list-style: none;
+    /*убираем маркеры списка*/
+    padding-left: 0;
+    /*убираем отступы*/
+    width: fit-content;
+    margin: 0 auto;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+    /*Добавляем отступ у пунктов меню*/
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    /*убираем подчеркивание текста ссылок*/
+    background: #4d5252;
+    /*добавляем фон к пункту меню*/
+    color: #fff;
+    /*меняем цвет ссылок*/
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /*меняем шрифт*/
+    border-radius: 20px;
+    /*добавляем скругление*/
+}
+
+.asd {
+    clear: both;
+    margin-top: 20px;
+    overflow: hidden;
+}
+#Heroes{
+display: inline-block;
+width: fit-content;
+height: 40px;
+font-size: 30px;
+font-family: fantasy;
+background: #4d5252;
+border-radius: 20px;
+
+margin: 20px  607px;
+text-align: center;
+}
+.footer{
+margin: 40px 0  40px;
+}
