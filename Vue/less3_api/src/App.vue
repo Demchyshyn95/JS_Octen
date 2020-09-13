@@ -55,7 +55,7 @@ export default {
   methods: {
     async getEL() {
       try {
-        await axios.get(`https://htpp-less3-api.firebaseio.com/User.json`)
+        await axios.get(`https://htpp-less3-api.firebaseio.com/todolist.json`)
             .then(res => {
               return res.data
             })
@@ -63,6 +63,7 @@ export default {
               for (let el in res) {
                 this.newUser.push({id: el, ...res[el]})
               }
+              console.log(this.newUser);
             })
       } catch (e) {
         console.log(e)
