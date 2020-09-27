@@ -1,0 +1,10 @@
+<div>{{user?.id}}<br>
+  {{user?.name}}<br>
+  {{user?.username}}<br>
+<!--
+  <button [routerLink]="['user_page',user.id]">More info</button>
+-->
+<!--    <button [routerLink]="['user_page',user.id]" [state]="user">More info</button>-->
+  <button (click)="goSomeWhere(user)">More info</button>
+  <hr>
+</div>
