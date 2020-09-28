@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f51e88c-31fc-4ed1-a53d-ab0801b793a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson3/src/app/Components/user-list/user-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson3/src/app/Components/user-list/user-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson3/src/app/Components/user/user-info/user-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson3/src/app/Components/user/user-info/user-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson3/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson3/src/app/app-routing.module.ts" afterDir="false" />
-    </list>
+    <list default="true" id="5f51e88c-31fc-4ed1-a53d-ab0801b793a1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +61,9 @@
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5f51e88c-31fc-4ed1-a53d-ab0801b793a1" name="Default Changelist" comment="" />
@@ -77,11 +75,12 @@
       <workItem from="1600201151141" duration="11758000" />
       <workItem from="1600281238602" duration="2368000" />
       <workItem from="1600283634991" duration="49000" />
+      <workItem from="1601325348344" duration="413000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
