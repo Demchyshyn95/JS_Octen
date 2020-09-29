@@ -1,0 +1,17 @@
+<div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Select user id</mat-label>
+      <mat-select [(value)]="selected" >
+        <mat-option *ngFor="let userId of usersId" [value]="userId" (click)="changeUrl()">
+          {{userId}}
+        </mat-option>
+      </mat-select>
+      <mat-hint align="end">selected id: {{selected}}</mat-hint>
+    </mat-form-field>
+  </div>
+  <div *ngIf="showBtnUser">
+    <button (click)="showBtn()" [routerLink]="['user_page',selected]">Show user</button>
+  </div>
+</div>
+<router-outlet></router-outlet>
