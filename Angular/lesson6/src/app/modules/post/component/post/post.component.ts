@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {UserService} from '../../service/user.service';
-import {IPost} from '../../model/post';
-import {DataTranferService} from '../../service/data-tranfer.service';
+import {DataTranferService} from '../../../../service/data-tranfer.service';
+import {PostService} from '../../service/post.service';
+import {IPost} from '../../interface/post';
 
 @Component({
   selector: 'app-post',
@@ -13,7 +13,7 @@ export class PostComponent implements OnInit {
   posts: IPost;
 
   constructor(private activedRoute: ActivatedRoute,
-              private userService: UserService,
+              private userService: PostService,
               private dataTransfer: DataTranferService) {
     this.activedRoute.params.subscribe(value => {
       const id = this.dataTransfer.getID.getValue();

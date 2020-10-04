@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from '../../service/user.service';
 import {ActivatedRoute} from '@angular/router';
-import {IUser} from '../../model/user';
-import {DataTranferService} from '../../service/data-tranfer.service';
+import {IUser} from '../../interface/user';
+import {DataTranferService} from '../../../../service/data-tranfer.service';
 
 @Component({
   selector: 'app-user-page',
