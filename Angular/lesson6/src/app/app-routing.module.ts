@@ -8,17 +8,10 @@ const routes: Routes = [
   {
     path: '', component: SelectedComponent, children: [
       {
-        path: 'user_page/:id', loadChildren: () => import('./modules/user-page/user.module').then(value => value.UserModule),
-        /*        children: [
-                  {path: 'posts', loadChildren: () => import('./modules/post/post.module').then(value => value.PostModule)},
-                ]*/    /* !!!!!----Ось так не працює, дитя дитини не працює !!!!! */
-      },
-      /*
-           !!! А так працює  !!!!
-      */
-      {path: 'user_page/:id/posts', loadChildren: () => import('./modules/post/post.module').then(value => value.PostModule)}
-    ],
-  },
+        path: 'user_page/:id', loadChildren: () => import('./modules/user-page/user.module').then(value => value.UserModule)
+      }
+    ]
+  }
 ];
 
 @NgModule({

@@ -3,7 +3,11 @@ import {Routes, RouterModule} from '@angular/router';
 import {UserPageComponent} from './components/user-page/user-page.component';
 
 const routes: Routes = [
-  {path: '', component: UserPageComponent}
+  {
+    path: '', component: UserPageComponent, children: [
+      {path: 'posts', loadChildren: () => import('../post/post.module').then(value => value.PostModule)}
+    ]
+  }
 ];
 
 @NgModule({
