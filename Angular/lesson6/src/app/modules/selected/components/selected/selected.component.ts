@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {IUser} from '../../../user-page/interface/user';
+import {AllUsersService} from '../../../user-page/components/service/all-users.service';
 
 
 @Component({
@@ -9,16 +11,22 @@ import {Router} from '@angular/router';
 })
 export class SelectedComponent implements OnInit {
   selected: any;
-  usersId: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  users: IUser[];
   showBtnUser: boolean = true;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private allUsersService: AllUsersService) {
+    this.allUsersService.getAllUsers().subscribe(value => this.users = value
+    );
   }
+
   changeUrl(): void {
     this.router.navigate(['']);
     this.showBtnUser = true;
   }
-  showBtn(): void{this.showBtnUser = !this.showBtnUser}
+
+  showBtn(): void {
+    this.showBtnUser = !this.showBtnUser;
+  }
 
   ngOnInit(): void {
 

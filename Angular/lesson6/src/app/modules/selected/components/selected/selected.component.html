@@ -1,13 +1,13 @@
 <div>
   <div>
     <mat-form-field appearance="fill">
-      <mat-label>Select user id</mat-label>
+      <mat-label>Select user </mat-label>
       <mat-select [(value)]="selected" >
-        <mat-option *ngFor="let userId of usersId" [value]="userId" (click)="changeUrl()">
-          {{userId}}
+        <mat-option *ngFor="let user of users" [value]="user.id" (click)="changeUrl()">
+          {{user.name}}
         </mat-option>
       </mat-select>
-      <mat-hint align="end">selected id: {{selected}}</mat-hint>
+      <mat-hint align="end">selected user id: {{selected}}</mat-hint>
     </mat-form-field>
   </div>
   <div *ngIf="showBtnUser">
