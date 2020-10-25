@@ -21,9 +21,7 @@ export class UserPageComponent implements OnInit {
 
   isShow(): void {
     this.isShowBtnPost = !this.isShowBtnPost;
-/*
-    this.router.navigate([this.activedRoute._routerState.snapshot.url,'posts']);
-*/
+    this.router.navigate(['posts'], {relativeTo: this.activedRoute});
   }
 
   ngOnInit(): void {

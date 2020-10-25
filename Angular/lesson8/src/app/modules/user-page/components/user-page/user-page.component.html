@@ -6,7 +6,7 @@
   <p>email -- {{user?.email}}</p>
   <p>website -- {{user?.website}}</p>
   <div *ngIf="isShowBtnPost">
-    <button (click)="isShow()" [routerLink]="['posts']" >Show Posts</button>
+    <button (click)="isShow()" >Show Posts</button>
   </div>
 </div>
 <router-outlet></router-outlet>
