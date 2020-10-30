@@ -8,12 +8,15 @@ class UserList extends Component {
     state = {
         users: [],
         show: false,
-        newUser:{},
+        newUser: {},
     };
     api = new UserService();
 
+     componentDidMount() {
+         this.loadListUsers()
+    }
 
-    async componentDidMount() {
+    async loadListUsers() {
         this.setState({users: await this.api.getUsers()})
     }
 
@@ -21,16 +24,14 @@ class UserList extends Component {
         this.setState({
             newUser: user
         })
-        console.log(this.state.newUser)
-
-                this.isShow()
+        this.isShow()
     }
+
     isShow = () => {
         this.setState({
             show: !this.state.show
         })
     }
-
 
     render() {
 
