@@ -7,7 +7,7 @@ import FullUser from "../FullUser/FullUser";
 class UserList extends Component {
     state = {
         users: [],
-        show: true,
+        show: false,
         newUser:{},
     };
     api = new UserService();
@@ -23,13 +23,14 @@ class UserList extends Component {
         })
         console.log(this.state.newUser)
 
-        /*        this.isShow()*/
+                this.isShow()
     }
     isShow = () => {
         this.setState({
             show: !this.state.show
         })
     }
+
 
     render() {
 
@@ -42,7 +43,7 @@ class UserList extends Component {
                 </div>
                 <div>
                     {
-                        this.state.show ? <FullUser changeShow={this.isShow} user={this.state.user}/> : ('')
+                        this.state.show ? <FullUser changeShow={this.isShow} user={this.state.newUser}/> : ('')
                     }
                 </div>
             </div>

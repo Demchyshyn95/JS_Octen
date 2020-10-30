@@ -10,7 +10,8 @@ const User = (props) => {
                     <p className="card-text">
                         id: {id} <br/> email: {email}
                     </p>
-                    <button type="button" className="btn btn-outline-danger" onClick={() => props.showUser(props.user)}>Show
+                    <button type="button" className="btn btn-outline-danger"
+                            onClick={() => props.showUser(props.user)}>Show
                         user
                     </button>
                 </div>
