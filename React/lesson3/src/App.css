@@ -1,0 +1,13 @@
+.App {
+  padding-left: 50px;
+  padding-top: 50px;
+display: flex;
+  justify-content: initial;
+}
+.select{
+  padding-left: 50px;
+  width: 450px;
+}
+.find{
+  width: 400px;
+}
