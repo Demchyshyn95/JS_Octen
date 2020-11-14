@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+.active{
+  cursor: pointer;
+  text-decoration: none;
+  margin: 30px;
+  color:red;
+}
+.home{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  font-size: 28px;
+}
+.navli{
+  text-decoration: none;
+  margin: 30px;
+}
+.navli:hover{
+  color: red;
+  text-decoration: none;
+}
