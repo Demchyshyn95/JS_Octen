@@ -35,6 +35,7 @@ export default class SelectUser extends React.Component {
                     <input type="text" className="form-control" id="usr" placeholder='Enter User name...'
                            ref={this.name} onChange={this.onChangeInput}/>
                 </div>
+
                 <div>
                     {
                         users.map(user =>

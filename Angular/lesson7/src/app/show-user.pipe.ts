@@ -16,5 +16,4 @@ export class ShowUserPipe implements PipeTransform {
      });
      return users;
   }
-
 }
