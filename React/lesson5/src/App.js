@@ -30,7 +30,7 @@ function App() {
             </div>
             <div>
                 <Switch>
-                    <Route path='/Users/:id' children={} component={User}/>
+                    <Route path='/Users/:id' component={User}/>
                     <Route path='/Users' component={Users}/>
                     <Route path='/Posts' component={Posts}/>
                     <Route path='/Comments' component={Comments}/>
