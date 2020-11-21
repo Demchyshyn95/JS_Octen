@@ -9,12 +9,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {HttpClientModule} from '@angular/common/http';
+import { CommentsComponent } from './modules/comments/comments.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectedComponent,
+    CommentsComponent,
   ],
     imports: [
         BrowserModule,
@@ -28,7 +30,8 @@ import {HttpClientModule} from '@angular/common/http';
     ],
   exports: [
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    CommentsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

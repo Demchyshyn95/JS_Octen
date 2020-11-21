@@ -30,5 +30,4 @@ export class UserPageComponent implements OnInit {
       this.userService.getUserById(value.id).subscribe(el => this.user = el);
     });
   }
-
 }

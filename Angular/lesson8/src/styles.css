@@ -4,4 +4,11 @@ html, body { height: 100%; }
 body { margin: 0;
   position: absolute;
   left: 20px;
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.centrl{
+  display: flex;
+  justify-content: center;
+  width:1200px;
+}
+

@@ -10,10 +10,10 @@ import {PostService} from './service/post.service';
   declarations: [
     PostComponent,
   ],
-  imports: [
-    CommonModule,
-    PostRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        PostRoutingModule,
+    ],
   providers:[
     PostService
   ]

@@ -27,7 +27,7 @@ export class SelectedComponent implements OnInit {
   }
 
   showBtn(): void {
-    this.router.navigate(['user_page',this.selected]);
+    this.router.navigate(['user_page', this.selected]);
     this.showBtnUser = !this.showBtnUser;
   }
 
