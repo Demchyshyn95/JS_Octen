@@ -1,3 +1,5 @@
-export const userService = async () => {
-    return (await fetch('https://jsonplaceholder.typicode.com/users')).json()
+export const userService = async (loadUsers) => {
+    const data = await fetch('https://jsonplaceholder.typicode.com/users');
+    const users = await data.json();
+   loadUsers(users);
 }

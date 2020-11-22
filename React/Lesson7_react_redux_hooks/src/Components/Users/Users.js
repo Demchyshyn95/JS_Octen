@@ -7,10 +7,13 @@ import './style.css'
 
 const Users = () => {
     const dispatch = useDispatch()
-    useEffect(async () => {
-        const users = await userService();
-        dispatch(loadUsers(users))
-    }, []);
+
+    const getUsers = async () => {
+        const users = await userService(dispatch);
+    }
+    useEffect(()=>getUsers(), []);
+
+
     const users = useSelector(({users}) => users);
     const selecteds = useSelector(({selecteds}) => selecteds);
     return (

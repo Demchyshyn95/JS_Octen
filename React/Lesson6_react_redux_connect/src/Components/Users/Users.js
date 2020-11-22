@@ -7,10 +7,10 @@ import './style.css'
 
 const Users = ({users, loadUsers, select, selecteds}) => {
 
-    useEffect(async () => {
-        const users = await userService();
-        loadUsers(users);
-    }, [])
+    const getUsers = async () => {
+        const users = await userService(loadUsers);
+    }
+    useEffect(() => getUsers(), []);
 
     return (
         <div className="list">
