@@ -1,4 +1,4 @@
-import {loadUsers} from "../State/actions";
+import {loadUsers} from "../Redux/actions";
 
 export const userService = async (dispatch) => {
     const data = await fetch('https://jsonplaceholder.typicode.com/users');

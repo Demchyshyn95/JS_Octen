@@ -1,7 +1,7 @@
 import './style.css';
 import Card from "react-bootstrap/Card";
 import {Button} from "react-bootstrap";
-import {select} from "../../State/actions";
+import {select} from "../../Redux/actions";
 
 
 const User = ({user, dispatch, selecteds}) => {

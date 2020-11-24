@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect, useDispatch, useSelector} from "react-redux";
 import {userService} from "../../Service";
-import {loadUsers, select} from "../../State/actions";
+import {loadUsers, select} from "../../Redux/actions";
 import User from "../User/User";
 import './style.css'
 

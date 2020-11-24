@@ -1,4 +1,4 @@
-import {LOADING_USERS, SELECT} from "../actions_type";
+import {LOADING_USERS, SELECT} from "../actions_types";
 
 export const initialState = {
     users: [],
