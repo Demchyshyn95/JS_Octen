@@ -30,11 +30,8 @@ function App() {
             </div>
             <div>
                 <Switch>
-<<<<<<< HEAD
                     <Route path='/Users/:id'  component={User}/>
-=======
                     <Route path='/Users/:id' component={User}/>
->>>>>>> 1444dfe6d30ba422daf5feb7ebda94831cd0ef7c
                     <Route path='/Users' component={Users}/>
                     <Route path='/Posts' component={Posts}/>
                     <Route path='/Comments' component={Comments}/>
